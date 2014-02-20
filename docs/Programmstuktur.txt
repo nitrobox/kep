@@ -1,0 +1,31 @@
+application/: Der Verzeichnis enthält die eigene Anwendung. Das wird das MVC System inkludieren, sowie Konfigurationen, verwendete Services, und die eigene Bootstrap Datei.
+
+    configs/: Das Anwendungsweite Konfigurations Verzeichnis.
+
+    controllers/, models/, und views/: Diese Verzeichnisse fungieren als Standardcontroller, Modell oder View Verzeichnisse. Diese drei Verzeichnisse im Anwendungsverzeichnis zu haben bietet das beste Layout für das Starten eines einfachen Projekts sowie als Start eines modularen Projekts das globale controllers/models/views hat.
+
+    controllers/helpers/: Diese Verzeichnisse enthalten Action Helfer. Action Helfer haben entweder einen Namespace von "Controller_Helper_" im Standardmodul oder "<Module>_Controller_Helper" in anderen Modulen.
+
+    layouts/: Dieses Layout Verzeichnis ist für MVC-basierte Layouts. Da Zend_Layout ist der Lage ist MVC- und nicht-MVC-basierte Layouts zu verstehen, zeigt der Ort dieses Verzeichnisses das Layouts keine 1-zu-1 beziehung zu Controllern haben und unabhängig von Templates in views/ sind.
+
+    modules/: Module erlauben einem Entwickler ein Set von zusammengehörenden Controllern in eine logisch organisierte Gruppe zu gruppieren. Die Struktur im Modules Verzeichnis würde die Struktur des Application Verzeichnisses haben.
+
+    services/: Dieses Verzeichnis ist für eigene Anwendungsspezifische Web-Service Dateien welche von der eigenen Anwendung angeboten werden, oder für die Implementierung eines » Service Layers für eigene Modelle.
+
+    Bootstrap.php: Diese Datei ist der Eistiegspunkt für die eigene Anwendung, und sollte Zend_Application_Bootstrap_Bootstrapper implementieren. Das Ziel diese Datei ist es die Anwendung zu starten und Komponenten der Anwendung zur Verfügung zu stellen indem diese initialisiert werden.
+
+data/: Dieses Verzeichnis bietet einen Ort an dem Anwendungsdaten gespeichert werden die angreifbar und möglicherweise temporär sind. Die Veränderung von Daten in diesem Verzeichnis kann dazu führen das die Anwendung fehlschlägt. Die Informationen in diesem Verzeichnis können, oder auch nicht, in ein Subversion Repository übertragen werden. Beispiele von Dingen in diesem Verzeichnis sind Session Dateien, Cache Dateien, SQLite Datenbanken, Logs und Indezes.
+
+docs/: Dieses Verzeichnis enthält die Dokumentation, entweder erzeugt oder direkt bearbeitet
+
+library/: Dieses Verzeichnis ist für übliche Bibliotheken von denen die Anwendung abhängt, und es sollte im include_path von PHP sein. Entwickler sollten den Bibliotheks-Code Ihrer Anwendung in diesem Verzeichnis, unter einem eindeutigen Namespace platzieren, und den Richtlinien folgen die im Handbuch von PHP unter » Userland Naming Guide beschrieben sind, sowie denen die von Zend selbst beschrieben sind.; Dieses Verzeichnis kann auch den Zend Framework selbst enthalten; wenn dem so ist, würde er unter library/Zend/ platziert werden.
+
+public/: Dieses Verzeichnis enthält alle öffentlichen Dateien für die eigene Anwendung. index.php konfiguriert und startet Zend_Application, welche seinerseits die Datei application/Bootstrap.php startet, was dazu führt das der Front Controller ausgeführt wird. Der Web Root des Web Server sollte typischerweise auf dieses Verzeichnis gesetzt sein.
+
+scripts/: Dieses Verzeichnis enthält Maintenance und/oder Build Skripte. Solche Skripte können Commandline, Cron oder Phing Build Skripte enthalten die nicht wärend der Laufzeit ausgeführt werden, aber Teil für das korrekte Funktionieren der Anwendung sind. This directory contains maintenance and/or build scripts. Such scripts might include command line, cron, or phing build scripts that are not executed at runtime but are part of the correct functioning of the application.
+
+temp/: Das temp/ Verzeichnis wird für vergängliche Anwendungsdaten gesetzt. Diese Information würde typischerweise nicht im SVN Repository der Anwendung gespeichert werden. Wenn Daten im temp/ Verzeichnis gelöscht werden, sollten Anwendungsen dazu in der Lage sein weiterhin zu laufen wärend das möglicherweise die Geschwindigkeit reduziert bis die Daten wieder gespeichert oder neu gecacht sind.
+
+tests/: Dieses Verzeichnis enthält Anwendungstests. Diese würden hand-geschrieben sein, PHPUnit Tests, Selenium-RC basierte Tests oder basierend auf anderen Test Frameworks. Standardmäßig kann Library Code getestet werden indem die Verzeichnis Struktur des library/ Verzeichnisses vorgegauckelt wird. Zusätzliche funktionale Tests für die eigene Anwendung können geschrieben werden indem die Verzeichnis Struktur von application/ vorgegauckelt wird (inklusive der Unterverzeichnisse der Anwendung).
+
+Quelle: http://framework.zend.com/manual/1.11/de/project-structure.project.html
