@@ -51,6 +51,8 @@ function KEP_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to KEP (see VARARGIN)
 addpath(genpath('../../kep'));
+addpath(genpath('../../kep-master'));
+addpath(genpath('../../kep-develop'));
 % addpath(genpath('Allgemeines'));
 % addpath(genpath('Settings'));
 % addpath(genpath('Daten'));
